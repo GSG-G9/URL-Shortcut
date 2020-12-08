@@ -1,0 +1,35 @@
+{
+  "name": "URL-Shortcut",
+  "version": "1.0.0",
+  "description": "Making the urls shorter",
+  "main": "index.js",
+  "scripts": {
+    "start": "node ./server",
+    "dev": "NODE_ENV=development nodemon ./server",
+    "test": "NODE_ENV=test jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/GSG-G9/URL-Shortcut.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/GSG-G9/URL-Shortcut/issues"
+  },
+  "homepage": "https://github.com/GSG-G9/URL-Shortcut#readme",
+  "dependencies": {
+    "env2": "^2.2.2",
+    "express": "^4.17.1",
+    "pg": "^8.5.1"
+  },
+  "devDependencies": {
+    "eslint": "^7.15.0",
+    "eslint-config-airbnb-base": "^14.2.1",
+    "eslint-plugin-import": "^2.22.1",
+    "jest": "^26.6.3",
+    "nodemon": "^2.0.6",
+    "supertest": "^6.0.1"
+  }
+}
