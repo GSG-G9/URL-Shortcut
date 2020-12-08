@@ -16,8 +16,9 @@ switch (process.env.NODE_ENV) {
     break;
 
   default:
-    break;
+    throw new Error('There is no Database url !!!');
 }
+
 const option = {
   connectionString: DB_URL,
   ssl: process.env.NODE_ENV === 'production',
