@@ -1,3 +1,11 @@
-const { getUserHandler } = require('./user');
+const {
+  getUserHandler, addUserUrlHandler, logInUser,
+} = require('./user');
+const { urlShortHandler } = require('./url');
 
-module.exports = { getUserHandler };
+module.exports = {
+  getUserHandler,
+  addUserUrlHandler,
+  logInUser,
+  urlShortHandler,
+};

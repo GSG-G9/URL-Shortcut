@@ -1,7 +1,11 @@
 const router = require('express').Router();
-const { getUserHandler } = require('../controllers');
+const { getUserHandler, addUserUrlHandler, logInUser } = require('../controllers');
 
 router.get('/:name', getUserHandler);
+
+router.post('/addUserUrlInfo', addUserUrlHandler);
+
+router.post('/logInUser', logInUser);
 
 router.use((err, req, res, next) => {
   console.log('here erroer');
@@ -10,7 +14,7 @@ router.use((err, req, res, next) => {
       {
         title: 'Faild getting user',
         detail: 'somthing went wrong during getting usr',
-        errorMessage: err.msg,
+        errorMessage: err.message,
       },
     ],
   });
