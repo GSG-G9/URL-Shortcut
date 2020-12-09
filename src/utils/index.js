@@ -1,3 +1,5 @@
 const { boomify } = require('./boomify');
 
-module.exports = { boomify };
+const { createUrl } = require('./createShortUrl');
+
+module.exports = { boomify, createUrl };
