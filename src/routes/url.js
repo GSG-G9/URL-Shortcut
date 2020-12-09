@@ -4,7 +4,6 @@ const { urlShortHandler } = require('../controllers');
 router.get('/:urlShort', urlShortHandler);
 
 router.use((err, req, res, next) => {
-  console.log('here erroer');
   res.status(400).json({
     errors: [
       {
