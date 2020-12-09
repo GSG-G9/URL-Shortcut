@@ -7,8 +7,9 @@ const urlShortHandler = (req, res, next) => {
     if (data.rows.length === 0) {
       throw boomify(404, 'url not found');
     }
-    const { urlFull } = data.rows[0];
-    res.redirect(urlFull);
+    const { urlfull } = data.rows[0];
+
+    res.redirect(urlfull);
   }).catch(next);
 };
 
