@@ -4,7 +4,7 @@ let DB_URL = '';
 
 switch (process.env.NODE_ENV) {
   case 'production':
-    DB_URL = process.env.DB_URL;
+    DB_URL = process.env.DATABASE_URL;
     break;
 
   case 'development':

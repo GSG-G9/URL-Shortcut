@@ -4,7 +4,8 @@ const { checkUrlInDB, getUserId, addUrlData } = require('../../database/queries'
 const addUserUrlHandler = (req, res, next) => {
   try {
     const { name, urlFull } = req.body;
-    console.log(name, urlFull);
+    console.log({ name, urlFull });
+
     if (!name) {
       throw boomify(404, 'User not found');
     }
@@ -26,6 +27,7 @@ const addUserUrlHandler = (req, res, next) => {
     }).then(() => {
       res.status(201).json({
         titles: 'adding url succeed',
+        urlShort,
       });
     }).catch(next);
   } catch (err) {

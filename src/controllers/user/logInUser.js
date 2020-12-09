@@ -8,7 +8,6 @@ const logInUser = (req, res, next) => {
       throw boomify(400, 'User is required');
     }
     getUserId(name).then((data) => {
-      console.log(data);
       if (data.rows.length === 0) {
         return addNewUser(name);
       }
