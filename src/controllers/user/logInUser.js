@@ -1,4 +1,4 @@
-const boomify = require('../../utils/boomify');
+const { boomify } = require('../../utils');
 const { addNewUser, getUserId } = require('../../database/queries');
 
 const logInUser = (req, res, next) => {

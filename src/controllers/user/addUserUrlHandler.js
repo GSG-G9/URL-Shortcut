@@ -15,12 +15,12 @@ const addUserUrlHandler = (req, res, next) => {
     const SHORT_URL_LENGHT = 7;
     const urlShort = createUrl(SHORT_URL_LENGHT);
     const visitors = 0;
+
     // checkUrlInDB(shortUrl).then((isData) => {
     // });
 
     getUserId(name).then((userId) => {
       userId = userId.rows[0].id;
-      console.log(userId);
       return addUrlData({
         urlFull, urlShort, visitors, userId,
       });

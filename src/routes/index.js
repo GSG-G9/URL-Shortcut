@@ -6,6 +6,5 @@ router.use('/user', user);
 
 router.use('/url', url);
 
-// router.use('/',row);
 
 module.exports = router;
