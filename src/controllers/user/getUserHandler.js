@@ -14,4 +14,4 @@ const getUserHandler = (req, res, next) => {
     .catch(next);
 };
 
-module.exports = getUserHandler;
+module.exports = { getUserHandler };

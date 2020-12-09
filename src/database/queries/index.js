@@ -3,6 +3,7 @@ const { addUrlData } = require('./addUrlData');
 const { getFullUrl } = require('./getFullUrl');
 const { addNewUser } = require('./addNewUser');
 const { updateVisitorsNum } = require('./updateVisitorsNum');
+const { getUserId } = require('./getUserIdByName');
 
 module.exports = {
   getUserData,
@@ -10,4 +11,5 @@ module.exports = {
   getFullUrl,
   addNewUser,
   updateVisitorsNum,
+  getUserId,
 };
