@@ -5,11 +5,11 @@ const getUserHandler = (req, res, next) => {
   const { name } = req.params;
   getUserData(name)
     .then((data) => {
-      const userData = data.rows[0];
-      if (!userData) {
+      const userData = data.rows;
+      if (userData.length === 0) {
         throw boomify(400, 'user not found');
       }
-      res.json(data.rows[0]);
+      res.json(data.rows);
     })
     .catch(next);
 };

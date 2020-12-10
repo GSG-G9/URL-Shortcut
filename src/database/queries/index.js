@@ -4,6 +4,7 @@ const { getFullUrl } = require('./getFullUrl');
 const { addNewUser } = require('./addNewUser');
 const { updateVisitorsNum } = require('./updateVisitorsNum');
 const { getUserId } = require('./getUserIdByName');
+const { checkUrlInDB } = require('./checkUrlInDB');
 
 module.exports = {
   getUserData,
@@ -12,4 +13,5 @@ module.exports = {
   addNewUser,
   updateVisitorsNum,
   getUserId,
+  checkUrlInDB,
 };

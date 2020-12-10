@@ -6,7 +6,9 @@
   buttonContainer.addEventListener('click', (e) => {
     e.preventDefault();
     const name = document.querySelector('#label').value.toLowerCase().trim();
-    if (!name) { return; }
+    if (!name) {
+      return;
+    }
     if (!isHome) {
       fetch('/user/logInUser', {
         method: 'POST',
@@ -20,10 +22,15 @@
           if (data.name) {
             username = data.name;
             goToHome(data.name);
+            isHome = !isHome;
+            fetch(`/user/${username}`)
+              .then((response) => response.json())
+              .then((data) => {
+                addUrlData(data);
+              });
           }
         })
         .catch();
-      isHome = !isHome;
     } else {
       fetch('/user/addUserUrlInfo', {
         method: 'POST',
@@ -35,6 +42,7 @@
         .then((response) => response.json())
         .then((data) => {
           addUrlShort(`${window.location.href}url/${data.urlShort}`);
+          addUrlData([{ urlshort: data.urlShort }]);
         })
         .catch();
     }

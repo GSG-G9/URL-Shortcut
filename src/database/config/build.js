@@ -10,7 +10,6 @@ module.exports = () => {
     .query(sql)
     .then(() => {
       console.log('Database is created');
-      connection.end(() => console.log('Connection is closed'));
     })
     .catch((err) => console.log('err', err));
 };

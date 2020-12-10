@@ -4,7 +4,7 @@
   "description": "Making the urls shorter",
   "main": "index.js",
   "scripts": {
-    "start": "node ./src",
+    "start": "NODE_ENV=development node ./src",
     "dev": "NODE_ENV=development nodemon ./src",
     "test": "NODE_ENV=test jest"
   },

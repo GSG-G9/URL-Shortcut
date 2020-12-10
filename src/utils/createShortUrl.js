@@ -1,4 +1,4 @@
-const createUrl = (serialLength) => {
+const createUrl = (serialLength, checkUrlInDB) => {
   const chars = '1234567890ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz';
   let randomIndex;
   let randomSerial = '';
@@ -6,10 +6,13 @@ const createUrl = (serialLength) => {
     randomIndex = Math.floor(Math.random() * chars.length);
     randomSerial += chars.substring(randomIndex, randomIndex + 1);
   }
-  // if (checkUrlInDB(randomSerial)) {
-  //   createUrl(serialLength, checkUrlInDB);
-  // }
-  return randomSerial;
+
+  return checkUrlInDB(randomSerial).then((isThere) => {
+    if (!isThere) {
+      return randomSerial;
+    }
+    return createUrl(serialLength, checkUrlInDB);
+  });
 };
 
 module.exports = { createUrl };

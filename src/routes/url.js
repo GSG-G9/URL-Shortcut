@@ -1,18 +1,6 @@
 const router = require('express').Router();
-const { urlShortHandler } = require('../controllers');
+const { urlShortHandler, notFound } = require('../controllers');
 
 router.get('/:urlShort', urlShortHandler);
-
-router.use((err, req, res, next) => {
-  res.status(400).json({
-    errors: [
-      {
-        title: 'Faild getting user',
-        detail: 'somthing went wrong during getting usr',
-        errorMessage: err.message,
-      },
-    ],
-  });
-});
-
+router.use(notFound);
 module.exports = router;
