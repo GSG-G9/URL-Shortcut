@@ -20,10 +20,10 @@
           if (data.name) {
             username = data.name;
             goToHome(data.name);
+            isHome = !isHome;
           }
         })
         .catch();
-      isHome = !isHome;
     } else {
       fetch('/user/addUserUrlInfo', {
         method: 'POST',
