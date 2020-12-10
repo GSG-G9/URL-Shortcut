@@ -23,6 +23,11 @@
             username = data.name;
             goToHome(data.name);
             isHome = !isHome;
+            fetch(`/user/${username}`)
+              .then((response) => response.json())
+              .then((data) => {
+                addUrlData(data);
+              });
           }
         })
         .catch();
@@ -37,6 +42,7 @@
         .then((response) => response.json())
         .then((data) => {
           addUrlShort(`${window.location.href}url/${data.urlShort}`);
+          addUrlData([{ urlshort: data.urlShort }]);
         })
         .catch();
     }
