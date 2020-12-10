@@ -14,9 +14,8 @@ Visit this **[Link](https://url-shoruct.herokuapp.com/)** to view our site
 
 
 ### What is URL-Shortcut
-----------------
 
-This website enables users users to get a shorter urls for their sites.
+This website enables users to get a shorter urls for their sites.
 
 ------
 
@@ -37,8 +36,8 @@ First we did a database Scheam then we made the sever side and finally we went t
 ---------
 
 ### User Journey :-
-User inter inter the user name.
-User get a new form to inter site link.
-User press short it button
-User get a short url link
-User can see all url links when he did a login again.
+- User inter inter the user name.
+- User get a new form to inter site link.
+- User press short it button
+- User get a short url link
+- User can see all url links when he did a login again.
