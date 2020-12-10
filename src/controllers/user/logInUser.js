@@ -7,14 +7,16 @@ const logInUser = (req, res, next) => {
     if (!name) {
       throw boomify(400, 'User is required');
     }
-    getUserId(name).then((data) => {
-      if (data.rows.length === 0) {
-        return addNewUser(name);
-      }
-    }).then(() => res.status(200).json({
-      msg: 'login succeed',
-      name,
-    }));
+    getUserId(name)
+      .then((data) => {
+        if (data.rows.length === 0) {
+          return addNewUser(name);
+        }
+        return boomify(404, 'user not found');
+      }).then(() => res.status(200).json({
+        msg: 'login succeed',
+        name,
+      }));
   } catch (err) {
     next(err);
   }

@@ -6,7 +6,9 @@
   buttonContainer.addEventListener('click', (e) => {
     e.preventDefault();
     const name = document.querySelector('#label').value.toLowerCase().trim();
-    if (!name) { return; }
+    if (!name) {
+      return;
+    }
     if (!isHome) {
       fetch('/user/logInUser', {
         method: 'POST',

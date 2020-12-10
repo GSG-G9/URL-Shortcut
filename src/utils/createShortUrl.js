@@ -6,9 +6,6 @@ const createUrl = (serialLength) => {
     randomIndex = Math.floor(Math.random() * chars.length);
     randomSerial += chars.substring(randomIndex, randomIndex + 1);
   }
-  // if (checkUrlInDB(randomSerial)) {
-  //   createUrl(serialLength, checkUrlInDB);
-  // }
   return randomSerial;
 };
 

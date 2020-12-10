@@ -16,7 +16,7 @@ const goToHome = (name) => {
   hUrl.classList.add('url-title');
   document.querySelectorAll('.card').forEach((node, i) => {
     node.classList.add('card-home');
-    i == 0 || node.appendChild(hUrl);
+    if (i !== 0) { node.appendChild(hUrl); }
   });
   document.querySelector('.container').classList.add('container-home');
 };
@@ -29,5 +29,9 @@ const addUrlShort = (url) => {
   urlTitle.appendChild(a);
 };
 
-// goToHome('osama');
-// addUrlShort('https://www.google.com/');
+if (typeof module !== 'undefined') {
+  module.exports = {
+    goToHome,
+    addUrlShort,
+  };
+}
