@@ -1,4 +1,4 @@
-const { getFullUrl } = require('../../database/queries');
+const { getFullUrl, updateVisitorsNum } = require('../../database/queries');
 
 const urlShortHandler = (req, res, next) => {
   const { urlShort } = req.params;
