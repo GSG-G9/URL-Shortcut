@@ -1,6 +1,7 @@
 const { Pool } = require('pg');
 
 let DB_URL = '';
+process.env.NODE_TLS_REJECT_UNAUTHORIZED = 0;
 switch (process.env.NODE_ENV) {
   case 'production':
     DB_URL = process.env.DATABASE_URL;
